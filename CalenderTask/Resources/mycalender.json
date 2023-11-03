@@ -1,0 +1,25 @@
+{
+    "holidays" : [
+        {
+            "holidayTitle" : "Diwali/Deepavali",
+            "holidayDate": "2023-11-12"
+        },
+        {
+            "holidayTitle" : "Day off for Diwali/Deepavali",
+            "holidayDate": "2023-11-13"
+        }
+    ],
+    "balance" : [
+        {
+            "title": "Paid vacation",
+            "value": "12.00 days available",
+            "isPaid": true
+        },
+        {
+            "title": "Sick leave",
+            "value": "14.00 days available",
+            "isPaid": false
+        }
+    ]
+    
+}
