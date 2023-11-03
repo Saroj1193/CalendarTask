@@ -95,22 +95,5 @@ Check the Podfile on the code to check the dependencies.
 ```
 #### Cocoapods
 
-Cocoapods integrate a couple of important components for this project, mainly `Amplify` and `ResearchKit`
-
-* ResearchKit; while CareKit could be installed via SPM, ResearchKit could not be installed via SPM. And CareKit needs ResearchKit linked for `OCKSurveyTaskViewControllerDelegate` which had been used in `CareFeedViewController` class from App target. Might be depricated in the future, though. `ResearchKit` is linked to `CareKit` and App targets by cocoapods, please check `researchkit_pod` in the `Podfile`
-* Amplify; there're several amplify pods that are linked to `AmplifyModels`, `Networking` and App targets by cocoapods; please check `amplify_pods` in the `Podfile`
-
-#### SPM
-
-SPM is used for one small helper extension currently 
-
-## Style guide 
-
-* The product follows zero warnings policy, meaning that all the warnings should be fixed, only ToDo related warnings that are produced by SwiftLint kept for tech debt kind of things that for one reason or another are not filed as JIRA tickets.
-* SwiftLint is used to enforcing style guide. SwiftLint is integrated via cocoapods. Please refer to `swiftlint.yml` for it's configuration.
-* `print()`s are not used, instead debug asserting notion is being used to verify any expectations and assumptions about the code; please check `ExpectationFailed.swift`, `Optional+ExpectingNonNil.swift`; like assert, expectation would crash the app in debug but would be ignored in release; asserts are extracted to these helper functions so that they could be easily disabled at any time, or as a potential extension point for logging of unexpected cases
-
-## Unit Tests
-
-Currently there are none, it would be helpful to add some to cover Storage framework
+Cocoapods integrate a couple of important components for this project, mainly `FSCalendar`
 
