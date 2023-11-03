@@ -20,6 +20,7 @@ typedef NS_ENUM(NSUInteger, FSCalendarMonthPosition);
  The day text label of the cell
  */
 @property (weak, nonatomic) UILabel  *titleLabel;
+@property (weak, nonatomic) UIView  *lineView;
 
 /**
  The subtitle label of the cell

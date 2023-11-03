@@ -430,9 +430,6 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     NSDateComponents* comp = [cal components:NSCalendarUnitWeekday fromDate:date];
     NSInteger day = [comp weekday];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(cell.bounds.origin.x, cell.bounds.origin.y, cell.bounds.size.width - 1, cell.bounds.size.height)];
-    [cell.contentView insertSubview:view atIndex:0];
-    
     NSString *dateString =  @"2023-11-12";
     NSString *dateString2 =  @"2023-11-13";
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -442,11 +439,11 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     
     cell.contentView.backgroundColor = [UIColor colorWithRed: 0.65 green: 0.65 blue: 0.65 alpha: 1.0];
     if (date == date1 || date == date2) {
-        view.backgroundColor = [UIColor colorWithRed: 0.99 green: 0.93 blue: 0.93 alpha: 1.00];
+        cell.lineView.backgroundColor = [UIColor colorWithRed: 0.99 green: 0.93 blue: 0.93 alpha: 1.00];
     } else if (day == 1 || day == 7) {
-        view.backgroundColor = [UIColor colorWithRed: 0.94 green: 0.94 blue: 0.95 alpha: 1.00];
+        cell.lineView.backgroundColor = [UIColor colorWithRed: 0.94 green: 0.94 blue: 0.95 alpha: 1.00];
     } else {
-        view.backgroundColor = UIColor.whiteColor;
+        cell.lineView.backgroundColor = UIColor.whiteColor;
     }
     return cell;
 }

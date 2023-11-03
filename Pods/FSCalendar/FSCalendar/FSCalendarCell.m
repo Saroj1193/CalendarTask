@@ -89,6 +89,9 @@
     self.clipsToBounds = NO;
     self.contentView.clipsToBounds = NO;
     
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(self.bounds.origin.x, self.bounds.origin.y, self.bounds.size.width - 1, self.bounds.size.height)];
+    self.lineView = view;
+    [self.contentView insertSubview:view atIndex:0];
 }
 
 - (void)layoutSubviews
