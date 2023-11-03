@@ -122,7 +122,7 @@
             if (!self.calendar.floatingMode) {
                 switch (self.calendar.transitionCoordinator.representingScope) {
                     case FSCalendarScopeMonth: {
-                        height = (self.collectionView.fs_height-self.sectionInsets.top-self.sectionInsets.bottom)/6.0;
+                        height = (self.collectionView.fs_height-self.sectionInsets.top-self.sectionInsets.bottom - 12 )/6.0;
                         break;
                     }
                     case FSCalendarScopeWeek: {

@@ -430,9 +430,8 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     NSDateComponents* comp = [cal components:NSCalendarUnitWeekday fromDate:date];
     NSInteger day = [comp weekday];
     
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y, 5, 100)];
-    view.backgroundColor = UIColor.greenColor;
-    [cell.contentView addSubview:view];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(cell.bounds.origin.x, cell.bounds.origin.y, cell.bounds.size.width - 1, cell.bounds.size.height)];
+    [cell.contentView insertSubview:view atIndex:0];
     
     NSString *dateString =  @"2023-11-12";
     NSString *dateString2 =  @"2023-11-13";
@@ -440,12 +439,14 @@ typedef NS_ENUM(NSUInteger, FSCalendarOrientation) {
     [dateFormatter setDateFormat:@"yyyy-MM-dd"];
     NSDate *date1 = [dateFormatter dateFromString:dateString];
     NSDate *date2 = [dateFormatter dateFromString:dateString2];
+    
+    cell.contentView.backgroundColor = [UIColor colorWithRed: 0.65 green: 0.65 blue: 0.65 alpha: 1.0];
     if (date == date1 || date == date2) {
-        cell.backgroundColor = [UIColor colorWithRed: 0.99 green: 0.93 blue: 0.93 alpha: 1.00];
+        view.backgroundColor = [UIColor colorWithRed: 0.99 green: 0.93 blue: 0.93 alpha: 1.00];
     } else if (day == 1 || day == 7) {
-        cell.backgroundColor = [UIColor colorWithRed: 0.94 green: 0.94 blue: 0.95 alpha: 1.00];
+        view.backgroundColor = [UIColor colorWithRed: 0.94 green: 0.94 blue: 0.95 alpha: 1.00];
     } else {
-        cell.backgroundColor = UIColor.whiteColor;
+        view.backgroundColor = UIColor.whiteColor;
     }
     return cell;
 }
